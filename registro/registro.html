@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"> <!-- Define la codificación de caracteres del documento como UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la escala inicial de la ventana gráfica del navegador -->
+<title>Formulario de Registro</title> <!-- Establece el título de la página -->
+<link rel="stylesheet" href="./registro.css"> <!-- Enlaza la hoja de estilos CSS externa -->
+</head>
+<body>
+<div class="container">
+    <div class="logo">
+        <img src="./logo.jpg" alt="Logo"> <!-- Inserta la imagen del logo -->
+    </div>
+    <h2>Registro de Usuario</h2> <!-- Título principal del formulario -->
+    <form id="registrationForm" onsubmit="return validateForm()"> <!-- Inicio del formulario de registro con llamada a la función validateForm() en el evento de envío -->
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required> <!-- Campo de entrada para el nombre -->
+        </div>
+        <div class="form-group">
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" required> <!-- Campo de entrada para los apellidos -->
+        </div>
+        <div class="form-group">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required> <!-- Campo de entrada para la contraseña -->
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirmar Contraseña:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required> <!-- Campo de entrada para confirmar contraseña -->
+        </div>
+        <div class="form-group">
+            <label for="matricula">Matrícula:</label>
+            <input type="text" id="matricula" name="matricula" required> <!-- Campo de entrada para la matricula -->
+        </div>
+        <div class="form-group">
+            <label for="colorCarro">Color del Carro:</label>
+            <input type="text" id="colorCarro" name="colorCarro" required> <!-- Campo de entrada para el color del carro -->
+        </div>
+        <button type="submit">Registrarse</button>
+        <p id="success-msg" style="display: none; color: green; font-weight: bold;">Registro exitoso. ¡Bienvenido!</p> <!-- Mensaje de éxito oculto -->
+    </div>
+    
+    <script src="./registro.js"></script> <!-- Enlace al archivo de script JavaScript externo -->
+    </body>
+</html>
