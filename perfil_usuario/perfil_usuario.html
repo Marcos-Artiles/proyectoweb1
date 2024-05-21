@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="./perfil_usuario.css"> 
+    <script src="./perfil_usuario.js"></script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="perfil-container">
+        <h2>Perfil de Usuario</h2>
+
+        <form action="#" method="POST"> <!-- Ajusta la acción del formulario según tus necesidades -->
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirmar Contraseña:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+            <div class="form-group">
+                <label for="matricula">Matrícula:</label>
+                <input type="text" id="matricula" name="matricula" required>
+            </div>
+            <div class="form-group">
+                <label for="color_carro">Color del Carro:</label>
+                <input type="color" id="color_carro" name="color_carro" required>
+            </div>
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2024 Artiles Enriquez Marcos Javier. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
