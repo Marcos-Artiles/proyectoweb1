@@ -1,0 +1,101 @@
+/* registro.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../../../public/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 400px;
+    margin: 20px auto; /* Ajusta el margen superior e inferior */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejorar la legibilidad */
+}
+
+header {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 0;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    position: relative;
+    text-align: center;
+}
+
+.logo img {
+    width: 200px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+}
+
+.form-group {
+    margin-bottom: 20px; /* Espacio entre cada campo */
+}
+
+label {
+    color: white; /* Texto blanco */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white; /* Texto blanco */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#success-msg {
+    color: rgb(0, 0, 0); /* Texto blanco */
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+}
