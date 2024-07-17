@@ -71,9 +71,28 @@ button:hover {
   background-color: #0056b3;
 }
 
+.solicitudes-list {
+  list-style: none;
+  padding: 0;
+}
+
+.solicitud-item {
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+  border: 1px solid #ccc; /* Borde alrededor de cada solicitud */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+  margin-bottom: 10px; /* Espacio entre cada solicitud */
+}
+
+.solicitud-item p {
+  margin: 5px 0;
+  color: white; /* Color del texto */
+}
+
 footer {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   text-align: center;
   padding: 15px 0;
 }
+

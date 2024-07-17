@@ -1,5 +1,3 @@
-// AsignarPlazaPage.tsx
-
 import React, { useState } from 'react';
 import './AsignarPlazaPage.css'; // Asegúrate de que la ruta sea correcta para tu archivo CSS
 import { Link } from 'react-router-dom';
@@ -13,29 +11,38 @@ const AsignarPlazaPage: React.FC = () => {
     event.preventDefault();
 
     // Obtener usuarios almacenados localmente
-    const storedUsers = JSON.parse(localStorage.getItem('usuarios') || '[]');
+    let storedUsers: any[] = JSON.parse(localStorage.getItem('usuarios') || '[]');
+    let storedParkingSpots: any = JSON.parse(localStorage.getItem('parkingSpots') || '{}');
 
     // Buscar el usuario por matrícula
-    const usuario = storedUsers.find((user: any) => user.matricula === matricula);
+    const usuarioIndex = storedUsers.findIndex((user: any) => user.matricula === matricula);
 
-    if (usuario) {
-      // Asignar plaza al usuario
-      const updatedUsers = storedUsers.map((user: any) => {
-        if (user.matricula === matricula) {
-          user.plaza = plaza;
-        }
-        return user;
-      });
+    if (usuarioIndex !== -1) {
+      const usuario = storedUsers[usuarioIndex];
+      const plazaAnterior = usuario.plaza;
 
-      // Guardar usuarios actualizados en localStorage
-      localStorage.setItem('usuarios', JSON.stringify(updatedUsers));
+      // Actualizar la plaza del usuario
+      storedUsers[usuarioIndex].plaza = plaza;
+      localStorage.setItem('usuarios', JSON.stringify(storedUsers));
 
-      // Actualizar estado dinámicamente en parkingSpots
-      const parkingSpots = JSON.parse(localStorage.getItem('parkingSpots') || '{}');
-      parkingSpots[plaza] = 'Ocupado';
-      localStorage.setItem('parkingSpots', JSON.stringify(parkingSpots));
+      // Liberar plaza anterior si existe y es diferente a la nueva plaza asignada
+      if (plazaAnterior && plazaAnterior !== plaza) {
+        storedParkingSpots = {
+          ...storedParkingSpots,
+          [plazaAnterior]: 'Disponible'
+        };
+      }
 
-      setMessage(`Plaza ${plaza} asignada correctamente a ${usuario.correo}`);
+      // Asignar nueva plaza
+      storedParkingSpots = {
+        ...storedParkingSpots,
+        [plaza]: 'Ocupado'
+      };
+
+      // Guardar cambios en localStorage para parkingSpots
+      localStorage.setItem('parkingSpots', JSON.stringify(storedParkingSpots));
+
+      setMessage(`Plaza ${plaza} asignada correctamente a ${usuario.correo}. Plaza anterior liberada.`);
     } else {
       setMessage(`No se encontró ningún usuario con la matrícula ${matricula}`);
     }

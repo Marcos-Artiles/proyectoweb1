@@ -1,4 +1,4 @@
-/* Estilos únicos para UserProfile */
+/* Estilos para UserProfile */
 
 .perfil-container {
   max-width: 400px;
@@ -7,6 +7,7 @@
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.5);
   margin-left: 20px; /* Espacio a la izquierda para separar del borde */
+  float: left; /* Alinear a la izquierda */
 }
 
 .perfil-container header {
@@ -92,4 +93,65 @@
   bottom: 0;
   left: 0; /* Pegado a la izquierda de la pantalla */
   z-index: 1000;
+}
+
+.additional-info {
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-left: 20px; /* Espacio a la izquierda para separar del perfil-container */
+  float: right; /* Alinear a la derecha */
+  margin-right: 20px; /* Espacio a la derecha para separar del borde */
+  margin-top: 60px; /* Ajuste de margen superior para alineación */
+}
+
+.additional-info h3 {
+  color: white;
+}
+
+.additional-info p {
+  color: white;
+  margin-top: 10px;
+}
+
+.additional-info button {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.additional-info button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para el nuevo div de plazas disponibles */
+.plazas-disponibles {
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 20px auto; /* Centrado horizontal */
+}
+
+.plazas-disponibles h2 {
+  color: white;
+  text-align: center;
+}
+
+.plazas-disponibles ul {
+  list-style: none;
+  padding: 0;
+}
+
+.plazas-disponibles ul li {
+  color: white;
+  margin-bottom: 10px;
 }

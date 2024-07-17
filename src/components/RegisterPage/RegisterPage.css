@@ -1,4 +1,4 @@
-/* registro.css */
+/* RegisterPage.css */
 
 body {
     margin: 0;
@@ -10,92 +10,106 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
+    align-items: center; /* Centrar horizontalmente */
+    justify-content: center; /* Centrar verticalmente */
     min-height: 100vh;
   }
-
-  .container {
+  
+  .register-container {
     max-width: 400px;
-    margin: 20px auto; /* Ajusta el margen superior e inferior */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejorar la legibilidad */
-}
-
-header {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 80px; /* Ajusta este valor según sea necesario para centrar el contenedor verticalmente */
+  }
+  
+  .register-header {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 15px 0;
-}
-
-nav {
-    text-align: center;
-}
-
-nav ul {
+    position: fixed; /* Fijar el encabezado en la parte superior */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegurar que el encabezado esté por encima de otros elementos */
+  }
+  
+  .register-nav {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;
+    height: 100%;
+  }
+  
+  .register-nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-nav ul li {
+  }
+  
+  .register-nav ul li {
     display: inline-block;
     margin-right: 20px;
-}
-
-nav ul li a {
+  }
+  
+  .register-nav ul li a {
     color: white;
     text-decoration: none;
-}
-
-.logo {
+  }
+  
+  .register-logo {
     position: relative;
     text-align: center;
-}
-
-.logo img {
-    width: 200px; /* Ajusta el tamaño de la imagen */
+  }
+  
+  .register-logo img {
+    width: 200px;
     height: auto;
-}
-
-.form-group {
-    margin-bottom: 20px; /* Espacio entre cada campo */
-}
-
-label {
-    color: white; /* Texto blanco */
-}
-
-input[type="text"],
-input[type="password"] {
+  }
+  
+  .register-form-group {
+    margin-bottom: 20px;
+  }
+  
+  .register-label {
+    color: white;
+  }
+  
+  .register-input-text,
+  .register-input-password {
     width: 100%;
     padding: 8px;
     border-radius: 3px;
     border: 1px solid #ccc;
-}
-
-button {
+  }
+  
+  .register-button {
     padding: 10px 20px;
     background-color: #007bff;
-    color: white; /* Texto blanco */
+    color: white;
     border: none;
     border-radius: 3px;
     cursor: pointer;
     margin-top: 10px;
-}
-
-button:hover {
+  }
+  
+  .register-button:hover {
     background-color: #0056b3;
-}
-
-#success-msg {
-    color: rgb(0, 0, 0); /* Texto blanco */
-}
-
-footer {
+  }
+  
+  .register-success-msg {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .register-footer {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     text-align: center;
     padding: 15px 0;
     width: 100%;
-}
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  

@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './AdministratorPage.css'; // Asegúrate de que la ruta sea correcta para tu archivo CSS
 import { Link } from 'react-router-dom';
 
 const AdministratorPage: React.FC = () => {
-  // Estado para almacenar las solicitudes de soporte
-  const [solicitudes, setSolicitudes] = useState<string[]>([]);
+  const [solicitudes, setSolicitudes] = useState<{ correo: string; matricula: string; solicitud: string }[]>([]);
 
-  // Función para simular la recepción de solicitudes (puedes adaptarla según tu lógica real)
-  const recibirSolicitud = (solicitud: string) => {
-    setSolicitudes([...solicitudes, solicitud]);
-  };
+  useEffect(() => {
+    const solicitudesGuardadas = JSON.parse(localStorage.getItem('solicitudes') || '[]');
+    setSolicitudes(solicitudesGuardadas);
+  }, []);
 
   return (
     <div className="AdministratorPage">
@@ -28,17 +27,20 @@ const AdministratorPage: React.FC = () => {
           <button><Link to="/PlazasPage">Verificar Plazas</Link></button>
         </div>
 
-        {/* Visualización de las solicitudes */}
         <div className="solicitudes-container">
           <h2>Solicitudes de Soporte</h2>
           {solicitudes.length > 0 ? (
-            <ul>
+            <ul className="solicitudes-list">
               {solicitudes.map((solicitud, index) => (
-                <li key={index}>{solicitud}</li>
+                <li key={index} className="solicitud-item">
+                  <p><strong>Correo:</strong> {solicitud.correo}</p>
+                  <p><strong>Matrícula:</strong> {solicitud.matricula}</p>
+                  <p><strong>Solicitud:</strong> {solicitud.solicitud}</p>
+                </li>
               ))}
             </ul>
           ) : (
-            <p>No hay solicitudes pendientes.</p>
+            <p>Fin de las solicitudes pendientes.</p>
           )}
         </div>
       </main>
