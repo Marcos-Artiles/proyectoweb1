@@ -46,7 +46,7 @@ const AdministratorPage: React.FC = () => {
       </main>
 
       <footer>
-        <p>&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Artiles Enriquez Marcos Javier. Todos los derechos reservados.</p>
       </footer>
     </div>
   );

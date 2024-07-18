@@ -174,7 +174,7 @@ const UserProfile: React.FC = () => {
       </div>
 
       <footer>
-        <p>© 2024 Marcos. Todos los derechos reservados.</p>
+        <p>© 2024 Artiles Enriquez Marcos Javier. Todos los derechos reservados.</p>
       </footer>
     </div>
   );
